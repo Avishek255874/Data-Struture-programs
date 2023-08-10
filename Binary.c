@@ -1,11 +1,13 @@
 #include <stdio.h>
+#include <conio.h>
+
 void main()
 {
     int i, first, last, mid, search, n, a[100];
     printf("Enter the size of the array\n");
     scanf("%d", &n);
-    printf("Enter the element in   array\n", n);
-    for (i = 0; i <= n; i++)
+    printf("Enter the elements in the array\n");
+    for (i = 0; i < n; i++)
     {
         scanf("%d", &a[i]);
     }
@@ -15,10 +17,10 @@ void main()
     scanf("%d", &search);
     while (first <= last)
     {
-       mid = (first + last) / 2;
+        mid = (first + last) / 2;
         if (a[mid] == search)
         {
-            printf("element are found %d postion \n", (mid + 1));
+            printf("Element found at position %d\n", (mid + 1));
             break;
         }
         else if (a[mid] < search)
@@ -29,10 +31,9 @@ void main()
         {
             last = mid - 1;
         }
-        if (first > last)
-        {
-            printf("element is not present in array \n");
-        }
     }
-  
+    if (first > last)
+    { 
+        printf("Element is not present in the array\n");
+    }
 }
